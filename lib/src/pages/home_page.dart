@@ -28,21 +28,21 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _swiperTarjetas() {
-    return CardSwiper(
-      peliculas: [1,2,3,4,5],
-    );
-    // return FutureBuilder(
-    //     future: peliculasProvider.getEnCines(),
-    //     builder: (BuildContext context, AsyncSnapshot<List> snap) {
-    //       if (snap.hasData) {
-    //         return CardSwiper(peliculas: snap.data);
-    //       } else {
-    //         return Container(
-    //
-    //           child: Center(child: CircularProgressIndicator()),
-    //         );
-    //       }
-    //     });
+    // return CardSwiper(
+    //   peliculas: [1,2,3,4,5],
+    // );
+    return FutureBuilder(
+        future: peliculasProvider.getEnCines(),
+        builder: (BuildContext context, AsyncSnapshot<List> snap) {
+          if (snap.hasData) {
+            return CardSwiper(peliculas: snap.data);
+          } else {
+            return Container(
+              height: 400,
+              child: Center(child: CircularProgressIndicator()),
+            );
+          }
+        });
   }
 }
 
