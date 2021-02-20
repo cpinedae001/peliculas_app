@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:peliculas_app/src/model/pelicula_model.dart';
 
 class CardSwiper extends StatelessWidget {
 
@@ -21,6 +22,7 @@ class CardSwiper extends StatelessWidget {
           return  ClipRRect(
             borderRadius: BorderRadius.circular(20.0),
             child: Image.network("http://via.placeholder.com/350x150",fit: BoxFit.cover,),
+            // child: FadeInImage(placeholder: null, image: NetworkImage(peliculas[index].getPosterImg()))
           );
         },
         itemCount: peliculas.length,

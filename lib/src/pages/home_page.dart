@@ -1,8 +1,10 @@
-
 import 'package:flutter/material.dart';
+import 'package:peliculas_app/src/providers/peliculas_provider.dart';
 import 'package:peliculas_app/src/widges/card_swiper_widget.dart';
 
 class HomePage extends StatelessWidget {
+  PeliculasProvider peliculasProvider = new PeliculasProvider();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,29 +15,35 @@ class HomePage extends StatelessWidget {
         actions: [
           IconButton(
             icon: Icon(Icons.search),
-            onPressed: (){
-
-            },
+            onPressed: () {},
           )
         ],
       ),
       body: Container(
         child: Column(
-          children: [
-            _swiperTarjetas()
-          ],
+          children: [_swiperTarjetas()],
         ),
       ),
     );
   }
 
-Widget  _swiperTarjetas() {
-
-
+  Widget _swiperTarjetas() {
     return CardSwiper(
       peliculas: [1,2,3,4,5],
     );
-}
+    // return FutureBuilder(
+    //     future: peliculasProvider.getEnCines(),
+    //     builder: (BuildContext context, AsyncSnapshot<List> snap) {
+    //       if (snap.hasData) {
+    //         return CardSwiper(peliculas: snap.data);
+    //       } else {
+    //         return Container(
+    //
+    //           child: Center(child: CircularProgressIndicator()),
+    //         );
+    //       }
+    //     });
+  }
 }
 
 /****
