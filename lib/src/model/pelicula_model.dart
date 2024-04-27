@@ -67,7 +67,8 @@ class Pelicula {
 
   getPosterImg(){
     if(posterPath == null){
-      return 'https://image.shutterstock.com/image-vector/not-available-grunge-rubber-stamp-260nw-549465907.jpg';
+      // return 'https://image.shutterstock.com/image-vector/not-available-grunge-rubber-stamp-260nw-549465907.jpg';
+      return 'https://vinylxpress.com/wp-content/uploads/2017/11/NOT-AVAILABLE-STICKER.jpg';
     }else{
       return 'https://image.tmdb.org/t/p/w500/$posterPath';
     }
